@@ -1,0 +1,35 @@
+{
+    "name": "nashorn-runner",
+    "displayName": "Nashorn Runner",
+    "description": "Run Nashorn JS functions with input params directly from VS Code",
+    "version": "0.0.3",
+    "engines": {
+      "vscode": "^1.80.0"
+    },
+    "categories": ["Other"],
+    "publisher": "vishalkumar",
+
+    "activationEvents": ["onCommand:nashorn-runner.runFunction"],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "nashorn-runner.runFunction",
+          "title": "Run Nashorn Function"
+        }
+      ]
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "package": "vsce package"
+    },
+    "devDependencies": {
+      "@types/node": "^20.0.0",
+      "@types/vscode": "^1.80.0",
+      "typescript": "^5.0.0",
+      "vsce": "^2.0.0"
+    }
+  }
+  
